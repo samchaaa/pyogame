@@ -917,7 +917,8 @@ class OGame(object):
                 .format(id)
         ).text
         send_fleet_token = re.search(
-            'var fleetSendingToken = "(.*)"',
+            # 'var fleetSendingToken = "(.*)"',
+            'var token = "(.*)"',
             response
         ).group(1)
         form_data = {'token': send_fleet_token}
